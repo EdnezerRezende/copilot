@@ -10,12 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountService {
 
-    private AccountRepository accountRepository;
-
     @Autowired
-    public AccountService(final AccountRepository accountRepository) {
-        this.accountRepository = accountRepository;
-    }
+    private AccountRepository accountRepository;
 
     public Account getAccountByNumber(final String accountNumber) {
         final Account account = accountRepository.findByAccountNumber(accountNumber);

@@ -16,11 +16,7 @@ public class AccountController {
     @GetMapping("/{accountNumber}/balance")
     public Double getAccountBalance(@PathVariable String accountNumber) {
         final Account account = accountService.getAccountByNumber(accountNumber);
-        if (account != null) {
-            return account.getBalance();
-        } else {
-            return null;
-        }
+        return account.getBalance();
     }
 
     @PostMapping
